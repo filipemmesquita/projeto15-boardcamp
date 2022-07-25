@@ -12,14 +12,7 @@ export default async function validateCustomer(req, res, next) {
      });
     const newCustomer=req.body;
     const validate=gameSchema.validate(newCustomer);
-    //check if new cpf
-    const {rows: games }=await connection.query(`
-    SELECT cpf FROM customers WHERE cpf=$1
-    `,[newCustomer.cpf]);
-    if(games.length>0)
-    {
-        return res.sendStatus(409);
-    }
+
     next();
   }
   
