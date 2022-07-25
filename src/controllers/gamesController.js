@@ -17,7 +17,7 @@ export async function addGame(req,res){
 }
 export async function getGames(req,res){
     try{
-        if(req.query.name.length>0){
+        if(req.query.name){
             const { rows: games } = await connection.query(`
             SELECT games.*, categories.name as "categoryName"
             FROM games JOIN categories
