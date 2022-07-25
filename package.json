@@ -1,0 +1,27 @@
+{
+  "name": "projeto15-boardcamp",
+  "version": "1.0.0",
+  "description": "Back-end for a board game store",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/filipemmesquita/projeto15-boardcamp.git"
+  },
+  "author": "Filipe Mesquita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filipemmesquita/projeto15-boardcamp/issues"
+  },
+  "homepage": "https://github.com/filipemmesquita/projeto15-boardcamp#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.4",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "nodemon": "^2.0.19"
+  }
+}
