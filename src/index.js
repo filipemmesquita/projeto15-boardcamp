@@ -4,11 +4,8 @@ import dotenv from "dotenv";
 
 import categoryRouter from './routes/categoryRouter.js';
 import gamesRouter from './routes/gamesRouter.js'
-/*import authRouter from './routes/authRouter.js';
-import cartRouter from './routes/cartRouter.js';
-import historyRouter from './routes/historyRouter.js';
-import productRouter from './routes/productRouter.js';
-*/
+import customersRouter from './routes/customersRouter.js'
+
 dotenv.config();
 
 const server = express();
@@ -18,12 +15,8 @@ server.use(express.json());
 
 server.use(categoryRouter);
 server.use(gamesRouter)
-/*
-server.use(authRouter);
-server.use(cartRouter);
-server.use(historyRouter);
-server.use(productRouter);
-*/
+server.use(customersRouter)
+
 
 const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => console.log('Server Online'));
