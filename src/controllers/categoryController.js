@@ -16,12 +16,9 @@ export async function addCategory(req,res){
 }
 export async function getAllCategories(req,res){
     try{
-        console.log("1")
-
         const { rows: categories } = await connection.query(`
         SELECT * FROM categories
         `)
-        console.log("2")
         res.send(categories)
     }
     catch(error)

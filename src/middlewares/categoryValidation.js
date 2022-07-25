@@ -1,7 +1,7 @@
 import { connection } from "../dbStrategy/database.js";
 import joi from "joi";
 
-async function validateCategory(req, res, next) {
+export default async function validateCategory(req, res, next) {
     const categorySchema=joi.object({
         name: joi.string().min(3).required()
     });
@@ -22,5 +22,4 @@ async function validateCategory(req, res, next) {
     next();
   }
   
-  export default validateCategory;
   
