@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { addCategory, getAllCategories } from "../controllers/categoryController";
-import validateCategory from "../middlewares/categoryValidation";
+import { addCategory, getAllCategories } from "../controllers/categoryController.js";
+import validateCategory from "../middlewares/categoryValidation.js";
 
-const router = Router();
+const categoryRouter = Router();
 
-router.post("/categories", addCategory);
-router.get("/categories",validateCategory, getAllCategories);
+categoryRouter.post("/categories",validateCategory, addCategory);
+categoryRouter.get("/categories", getAllCategories);
 
-export default router
+export default categoryRouter;

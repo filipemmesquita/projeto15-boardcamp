@@ -1,28 +1,32 @@
-import { connection } from "../dbStrategy/database";
+import { connection } from "../dbStrategy/database.js";
 
 export async function addCategory(req,res){
-    const {newCategory}= req.body;
         
     try{
         await connection.query(`
         INSERT INTO categories (name) VALUES ($1)
-        `, [newCategory.name])
+        `, [req.body.name])
         res.sendStatus(201)
     }
-    catch
+    catch(error)
     {
-        res,sendStatus(500);
+        console.log(error.message)
+        res.sendStatus(500);
     }
 }
 export async function getAllCategories(req,res){
     try{
-        await connection.query(`
+        console.log("1")
+
+        const { rows: categories } = await connection.query(`
         SELECT * FROM categories
         `)
-        res.sendStatus(201)
+        console.log("2")
+        res.send(categories)
     }
-    catch
+    catch(error)
     {
-        res,sendStatus(500);
+        console.log(error.message)
+        res.sendStatus(500);
     }
 }

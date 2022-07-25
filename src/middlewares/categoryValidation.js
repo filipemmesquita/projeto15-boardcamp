@@ -1,8 +1,8 @@
-import { connection } from "../dbStrategy/database";
+import { connection } from "../dbStrategy/database.js";
 import joi from "joi";
 
 async function validateCategory(req, res, next) {
-    categorySchema=joiObject({
+    const categorySchema=joi.object({
         name: joi.string().min(3).required()
     });
     const newCategory=req.body;
